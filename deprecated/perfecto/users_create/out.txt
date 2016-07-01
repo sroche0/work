@@ -1,0 +1,4 @@
+https://mobilecloud.perfectomobile.com - shawnr@perfectomobile.com - 403 FORBIDDEN
+https://mobilecloud.perfectomobile.com - test@test.com - 403 FORBIDDEN
+https://academy.perfectomobile.com - shawnr@perfectomobile.com - 403 FORBIDDEN
+https://academy.perfectomobile.com - test@test.com - 403 FORBIDDEN

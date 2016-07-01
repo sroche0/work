@@ -1,0 +1,103 @@
+#!/usr/bin/env python
+# encoding:utf-8
+# Author: Shawn Roche
+#########################
+import getpass
+import os
+import argparse
+
+from apperianapi import apperian
+
+
+class EasePub:
+    def __init__(self, params):
+        self.env = params['env']
+        self.user = ''
+        self.password = ''
+        self.meta_data = {}
+        self.file_name = params['file']
+        self.org_psk = params['org']
+        self.verbose = params['verbose']
+
+    def get_filename(self):
+        count = 0
+        while count < 3:
+            if not self.file_name:
+                print '\nWhat is the filename of the app to be uploaded?'
+                self.file_name = raw_input('> ')
+            if not os.path.isfile(self.file_name):
+                print '\nThat file does not exist in this directory.'
+                print 'Please see file list below:\n'
+                files = [f for f in os.listdir('.') if os.path.isfile(f)]
+                for f in files:
+                    if any(i in f for i in ('ipa', 'apk')):
+                        print f
+                count += 1
+            else:
+                break
+        else:
+            print '\nPlease check the filename of the APK/IPA and try again'
+            exit(5)
+
+    def get_metadata(self):
+        print "\nEnter the app metadata. This is what that will be displayed in the App Catalog and admin Portal."
+        run = False
+        while not run:
+            self.meta_data["author"] = raw_input('  Author: ')
+            self.meta_data["name"] = raw_input('  App Name: ')
+            self.meta_data["shortdescription"] = raw_input('  Short Description: ')
+            self.meta_data["longdescription"] = raw_input('  Long Description: ')
+            self.meta_data["version"] = raw_input('  Version: ')
+            self.meta_data["versionNotes"] = raw_input('  Version Notes: ')
+            print '  Environment: {}'.format(self.env.upper())
+
+            choice = raw_input('\nUpload {} with the above metadata? (y/n)'.format(self.file_name))
+            if choice == 'y':
+                run = True
+            elif choice == 'n':
+                pass
+
+    def upload(self):
+        count = 0
+        while count < 3:
+            count += 1
+            user = raw_input('Username > ')
+            pw = getpass.getpass('Password > ')
+            ease = apperian.Pyapi(user, pw, region=self.env, verbose=self.verbose)
+            if ease.status != 401:
+                break
+
+        print
+        if ease.status != 200:
+            print 'Unable to authenticate, check your credentials'
+            exit(1)
+        else:
+            print 'Authenticated'
+
+        print 'Uploading app'
+        upload = ease.app.add(self.file_name, self.meta_data, org_psk=self.org_psk)
+
+        if upload['status'] == 200:
+            print 'Success'
+        else:
+            print 'Failed - {}'.format(upload)
+
+
+def get_args():
+    p = argparse.ArgumentParser(usage='ease_pub --file FILENAME')
+    p.add_argument('--file', default=False, metavar='Filename to be uploaded')
+    p.add_argument('--env', default='na', metavar='Env for Upload')
+    p.add_argument('-v', '--verbose', action="store_true", help="show more logging")
+    p.add_argument('--org', default=None, metavar='Org PSK to target with upload')
+
+    p = p.parse_args()
+
+    return vars(p)
+
+
+if __name__ == '__main__':
+    parameters = get_args()
+    publish = EasePub(parameters)
+    publish.get_filename()
+    publish.get_metadata()
+    publish.upload()

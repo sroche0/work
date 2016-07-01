@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+# encoding: utf-8
+# Author: Shawn Roche
+# Date: 9/16/2015
+#########################
+import os
+from subprocess import Popen
+
+file_names = os.listdir(os.getcwd())
+delete_flags = ['.wav', '.dmg', 'payload', '_serverside', '.eml', 'catalog']
+cwd = os.getcwd()
+
+for i in file_names:
+    for x in delete_flags:
+        if x in i.lower():
+            Popen(['rm', '-r', i])
+
+    if '.ipa' in i:
+        os.rename(i, '{}/Apps/IPAs/{}'.format(cwd, i))
+    elif '.apk' in i:
+        os.rename(i, '{}/Apps/APKs/{}'.format(cwd, i))
+    elif '.xap' in i:
+        os.rename(i, '{}/Apps/XAPs/{}'.format(cwd, i))
+    elif '.mobileprovision' in i:
+        os.rename(i, '{}/credentials/mobileprovisions/{}'.format(cwd, i))
+    elif '.p12' in i:
+        os.rename(i, '{}/credentials/certificates/{}'.format(cwd, i))
+    elif 'metadata' in i:
+        os.rename(i, 'metadata/{}'.format(i))
+    else:
+        pass

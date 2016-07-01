@@ -1,0 +1,107 @@
+# !/usr/bin/python2.7
+# encoding: utf-8
+# Author: Shawn Roche
+# Date: 2/18/2015
+#########################
+import getpass
+import csv
+from datetime import date
+import argparse
+import sys
+
+import progress
+from apperianapi import apperian
+
+
+def main():
+    parser = argparse.ArgumentParser(prog='Bulk User Delete',
+                                     usage='python delete_users.py --org ORG_NAME --env ENVIRONMENT',
+                                     add_help='The user_ids.csv should be placed in a folder with the same name '
+                                              'as the org.  --env and --csv are optional')
+    parser.add_argument('--org', metavar='Organization')
+    parser.add_argument('--env', default='default', help='Environment to run against')
+    parser.add_argument('--csv', default='user_ids.csv', help='Path to the csv with user IDs. Default is user_ids.csv')
+    args = parser.parse_args()
+
+    success, failed = [], []
+    today = date.today()
+
+    with open(args.csv, 'rb') as f:
+        user_ids = []
+        reader = csv.DictReader(f)
+        for row in reader:
+            user_ids.append(row)
+
+    count, last, auth = 0, 0, False
+    while not auth and count < 3:
+        user = raw_input('Username > ')
+        pw = getpass.getpass('Password > ')
+        ease = apperian.Pyapi(user, pw, args.env)
+        if ease.status == 200:
+            auth = True
+        count += 1
+
+    if not auth:
+        exit('Unable to authenticate, check your credentials')
+
+    print 'Building list of user PSKs'
+    tmp_user_list = ease.user.list()
+    tmp_user_list = [{'psk': x['psk'], 'user_id': x['id']} for x in tmp_user_list['result'] for y in user_ids
+                     if x['id'] == y['User ID']]
+
+    print 'Checking for duplicates'
+    psk_list = []
+    user_list = []
+    for i in tmp_user_list:
+        if i['psk'] not in psk_list:
+            psk_list.append(i['psk'])
+            user_list.append(i)
+
+    if len(tmp_user_list) - len(user_list) != 0:
+        print 'Removed {} duplicates'.format(len(tmp_user_list))
+
+    total = len(user_list)
+    raw_input('About to delete %d users from EASE. Press key to continue.' % total)
+
+    count, auth_fail = 0, 0
+    progress_bar = progress.Bar(total)
+    while user_list and auth_fail < 3:
+        delete_request = ease.user.delete(user_list[-1]['psk'])
+
+        if delete_request['status'] == 401:
+            auth_fail += 1
+            ease.auth()
+        else:
+            if delete_request['status'] == 200:
+                success.append([args.org, user_list[-1]['user_id'], today])
+                auth_fail = 0
+                user_list.pop()
+            else:
+                failed.append([user_list[-1], delete_request['result']])
+                user_list.pop()
+
+            progress_bar.update(count)
+            count += 1
+
+    if auth_fail >= 3:
+        print delete_request
+        exit()
+
+    if not auth:
+        print 'Unable to authenticate, remaining users have been marked failed.'
+        failed.extend(user_list)
+
+    if failed:
+        print '%d users failed. Check failed.csv for details\n' % len(failed)
+        with open('{}/failed.csv'.format(args.org), 'wb') as f:
+            writer = csv.writer(f)
+            writer.writerows(failed)
+
+    if success:
+        with open('deleted/deleted_list.csv', 'ab') as f:
+            writer = csv.writer(f)
+            writer.writerows(success)
+
+
+if __name__ == '__main__':
+    main()

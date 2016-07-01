@@ -1,0 +1,1180 @@
+https://academy.perfectomobile.com test - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://adp.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://mobiletestlab.aetna.com test - failed
+
+https://alaskaair.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - authentication failed (No AuthenticationProvider found for org.springframework.security.authentication.UsernamePasswordAuthenticationToken)"}
+
+https://aib.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://amex-eg.perfectomobile.com test - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://academy.perfectomobile.com test - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://adp.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://mobiletestlab.aetna.com test - failed
+
+https://alaskaair.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - authentication failed (No AuthenticationProvider found for org.springframework.security.authentication.UsernamePasswordAuthenticationToken)"}
+
+https://aib.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://amex-eg.perfectomobile.com test - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://academy.perfectomobile.com test - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://academy.perfectomobile.com test - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://academy.perfectomobile.com dsf - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://adp.perfectomobile.com dsf - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://mobiletestlab.aetna.com dsf - failed
+
+https://alaskaair.perfectomobile.com dsf - {"errorMessage":"Failed to get user info - Access denied - authentication failed (No AuthenticationProvider found for org.springframework.security.authentication.UsernamePasswordAuthenticationToken)"}
+
+https://aib.perfectomobile.com dsf - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://amex-eg.perfectomobile.com dsf - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://academy.perfectomobile.com hgfjhgd - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://adp.perfectomobile.com hgfjhgd - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://mobiletestlab.aetna.com hgfjhgd - failed
+
+https://alaskaair.perfectomobile.com hgfjhgd - {"errorMessage":"Failed to get user info - Access denied - authentication failed (No AuthenticationProvider found for org.springframework.security.authentication.UsernamePasswordAuthenticationToken)"}
+
+https://aib.perfectomobile.com hgfjhgd - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://amex-eg.perfectomobile.com hgfjhgd - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://academy.perfectomobile.com fdsaf - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://adp.perfectomobile.com fdsaf - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://mobiletestlab.aetna.com fdsaf - Failed, check URLhttps://mobiletestlab.aetna.com/services/users/fdsaf?operation=info&user=shawnr@perfectomobile.com&password=!Perfecto1234$
+
+https://alaskaair.perfectomobile.com fdsaf - {"errorMessage":"Failed to get user info - Access denied - authentication failed (No AuthenticationProvider found for org.springframework.security.authentication.UsernamePasswordAuthenticationToken)"}
+
+https://aib.perfectomobile.com fdsaf - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://amex-eg.perfectomobile.com fdsaf - <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+	<title>403 Forbidden - Perfecto Mobile</title>
+	<meta name="description" content="Perfecto Mobile enable mobile 
+operators, device manufacturers, application developers, testers and 
+content providers to significantly increase the quality of their 
+products and services while reducing time-to-market, costs and 
+logistical efforts.">
+	<meta name="keywords" content="Remote Access, Automated Testing 
+Solutions, Mobile Devices, Perfecto Mobile">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="robots" content="index, follow">
+	<meta name="revisit-after" content="1 days">
+	<link href="/errorpages/index_files/base.css" rel="stylesheet" type="text/css">
+	<link href="/errorpages/index_files/reset-fonts-grids.css" rel="stylesheet" 
+type="text/css">
+	<link href="/errorpages/index_files/general.css" rel="stylesheet" 
+type="text/css">
+	<script type="text/javascript" src="/errorpages/index_files/curvycorners.js"></script>
+</head><body>
+	<!-- begin: doc -->
+	<div id="doc"> 	  		
+		<!-- begin: header -->	  	          
+		<div id="hd"><span style="position: absolute; left: -9999px;" 
+id="textResizeControl">&nbsp;</span>
+			<!-- begin: header content-->
+	    	<div class="yui-g">
+            	
+		    		<div class="logo-panel-img"><a 
+href="/"><img alt="logo" 
+src="/errorpages/index_files/logo.gif" width="190"></a></div>
+		    </div>  	
+		    	<!-- end: header content-->
+      			<!-- begin: navigation area-->
+      			
+  		</div>
+    	<!-- end: header -->  
+<!--Begin Body -->
+	<div id="bd">     
+		
+			
+				<!-- begin: center column -->
+				<div class="yui-b">
+					
+					
+					<div class="text_panel">
+								
+						<h1>403 Forbidden</h1>
+				<p>You are trying to access a restricted area of the service.</p>
+                <p><A HREF="/nexperience">Click here to return to the login screen</A></p>
+                <p>If you require Perfecto Mobile Support - please contact us at <a href="mailto:support@perfectomobile.com">support@perfectomobile.com</a>
+				</div>
+				<!-- end: center column -->
+			
+			
+		
+    	
+      <!-- begin: row_middle above handsets-->
+      <div id="yui-gd">				
+      	
+      </div>		
+      <!-- end: row_middle above handsets-->
+      <!-- begin: row handsets-->
+      <div class="yui-g">
+      	
+		<!-- include the handsets after the middle -->
+		          	        
+      </div>		          	
+      <!-- end: row handsets-->
+      <!-- begin: content below handsets-->
+      <div class="yui-gd">	  	
+	  	
+      </div>          
+	  <!-- end: content below handsets-->
+      <!-- begin: horizontal boxes -->
+      <div class="yui-gd"> <!-- 1/3  - 2/3 -->      							
+		
+      </div>
+      <!-- end: horizontal boxes -->
+    </div>				
+    <!--end Body -->
+		<!--Begin footer-->
+    	<div id="ft">
+     		
+				<div class="yui-ge"><!--<div id="rights">-->
+<div class="yui-u first">&copy; Perfecto Mobile. All Rights Reserved.</div>
+</div>
+				    
+    	</div>	
+    	<!--end footer-->				
+	</div>
+	<!-- end: doc -->
+</body></html>
+
+https://academy.perfectomobile.com test - https://academy.perfectomobile.com/services/users/test?operation=info&user=shawnr@perfectomobile.com&password=!Perfecto1234$
+
+https://adp.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://mobiletestlab.aetna.com test - Failed, check URLhttps://mobiletestlab.aetna.com/services/users/test?operation=info&user=shawnr@perfectomobile.com&password=!Perfecto1234$
+
+https://alaskaair.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - authentication failed (No AuthenticationProvider found for org.springframework.security.authentication.UsernamePasswordAuthenticationToken)"}
+
+https://aib.perfectomobile.com test - {"errorMessage":"Failed to get user info - Access denied - bad credentials"}
+
+https://amex-eg.perfectomobile.com test - https://amex-eg.perfectomobile.com/services/users/test?operation=info&user=shawnr@perfectomobile.com&password=!Perfecto1234$
+
