@@ -6,6 +6,7 @@
 import csv
 import argparse
 import keyring
+import os
 from datetime import date
 
 from apperianapi import apperian
@@ -69,17 +70,21 @@ def main():
         print 'Unable to authenticate, remaining orgs have been marked failed.'
         failed.extend(org_ids)
 
+    base_path = os.path.expanduser('~/.ease_utils/del_users')
+    if not os.path.isfile(base_path):
+        os.makedirs(base_path)
+
     if failed:
-        print '{} orgs failed. Check failed.csv for details\n'.format(len(failed))
-        with open('/Users/sroche/AeroFS/Python/work/delete_orgs/failed.csv', 'wb') as f:
+        print '{} failed. Check {}/failed_{}.csv for details\n'.format(len(failed), base_path, today)
+        with open('{}/failed_{}.csv'.format(base_path, today), 'wb') as f:
             writer = csv.writer(f)
             writer.writerows(failed)
 
     if success:
-        with open('/Users/sroche/AeroFS/Python/work/delete_orgs/deleted/deleted_list.csv', 'ab') as f:
+        with open('{}/deleted_master.csv', 'ab') as f:
             writer = csv.writer(f)
             writer.writerows(success)
-        with open('/Users/sroche/AeroFS/Python/work/delete_orgs/deleted/{}.csv'.format(today), 'wb') as f:
+        with open('{}/deleted_{}.csv'.format(base_path, today), 'ab') as f:
             writer = csv.writer(f)
             writer.writerows(success)
 
