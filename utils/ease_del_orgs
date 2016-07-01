@@ -14,6 +14,10 @@ import progress
 
 
 def main():
+    base_path = os.path.expanduser('~/.ease_utils/del_orgs')
+    if not os.path.isfile(base_path):
+        os.makedirs(base_path)
+
     username = 'help@apperian.com'
     password = keyring.get_password('ease_ua', username)
 
@@ -27,7 +31,7 @@ def main():
     success, failed = [], []
     today = date.today()
 
-    with open('/Users/sroche/AeroFS/Python/work/delete_orgs/whitelist.csv', 'rb') as f:
+    with open('{}/whitelist.csv'.format(base_path), 'rb') as f:
         whitelist = []
         contents = csv.reader(f, delimiter=',', quotechar='"')
         for row in contents:
@@ -67,12 +71,8 @@ def main():
             count += 1
 
     if not auth:
-        print 'Unable to authenticate, remaining orgs have been marked failed.'
+        print 'Authentication failed 3 times, remaining users have been marked failed.'
         failed.extend(org_ids)
-
-    base_path = os.path.expanduser('~/.ease_utils/del_users')
-    if not os.path.isfile(base_path):
-        os.makedirs(base_path)
 
     if failed:
         print '{} failed. Check {}/failed_{}.csv for details\n'.format(len(failed), base_path, today)

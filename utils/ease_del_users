@@ -14,6 +14,10 @@ from apperianapi import apperian
 
 
 def main():
+    base_path = os.path.expanduser('~/.ease_utils/del_users')
+    if not os.path.isfile(base_path):
+        os.makedirs(base_path)
+
     parser = argparse.ArgumentParser(prog='Bulk User Delete',
                                      usage='python delete_users.py --org ORG_NAME --env ENVIRONMENT',
                                      add_help='The user_ids.csv should be placed in a folder with the same name '
@@ -91,10 +95,6 @@ def main():
     if ease.status != 200:
         print 'Authentication failed 3 times, remaining users have been marked failed.'
         failed.extend(user_list)
-
-    base_path = os.path.expanduser('~/.ease_utils/del_users')
-    if not os.path.isfile(base_path):
-        os.makedirs(base_path)
 
     if failed:
         print '{} failed. Check {}/failed_{}.csv for details\n'.format(len(failed), base_path, today)
