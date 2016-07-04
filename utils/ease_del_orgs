@@ -7,7 +7,7 @@ import csv
 import argparse
 import keyring
 import os
-from datetime import date
+from datetime import date, time
 
 from apperianapi import apperian
 import progress
@@ -18,13 +18,14 @@ def main():
     if not os.path.isfile(base_path):
         os.makedirs(base_path)
 
-    username = 'help@apperian.com'
-    password = keyring.get_password('ease_ua', username)
-
-    parser = argparse.ArgumentParser(prog='Bulk Org Delete', usage='ease_del_orgs --orgs --env ENVIRONMENT')
-    parser.add_argument('--env', default='default', metavar='Environment')
-    parser.add_argument('--orgs', default=False, metavar='Orgs List', required=True)
-    parser.add_argument('--user', default='')
+    parser = argparse.ArgumentParser(prog='Bulk Org Delete', usage='ease_del_orgs --orgs 123,456,789 --env na')
+    parser.add_argument('--env', default='default', help='Environment to run against. EX: na, eu')
+    parser.add_argument('--orgs', default=False, required=True,
+                        help='Comma separated list of org IDs or path to a csv containing the target org IDs')
+    parser.add_argument('--user', default='help@apperian.com',
+                        help='Admin account that has the permissions to delete the target orgs')
+    parser.add_argument('--pw', default=keyring.get_password('ease_ua', 'help@apperian.com'),
+                        help='Password for admin user you are using')
     parser.add_argument('--verbose', default=False, action='store_true')
 
     args = parser.parse_args()
@@ -50,16 +51,19 @@ def main():
     total = len(org_ids)
     raw_input('About to delete {} orgs from EASE. Press key to continue.'.format(str(total)))
 
-    ease = apperian.Pyapi(username, password, region=args.env, verbose=args.verbose)
-    auth = ease.status
+    ease = apperian.Pyapi(args.user, args.pw, region=args.env, verbose=args.verbose)
     progress_bar = progress.Bar(total)
 
-    count = 0
-    while org_ids and auth == 200:
+    count, auth_fail = 0, 0
+    while org_ids and auth_fail < 3:
         delete_request = ease.org_delete(org_ids[-1][1])
         if delete_request['status'] == 401:
-            auth = ease.auth()
+            auth_fail += 1
+            time.sleep(2)
+            ease.auth()
         else:
+            count += 1
+            progress_bar.update(count)
             attempted_org = org_ids.pop()
             if delete_request['status'] == 200:
                 attempted_org.append(today)
@@ -67,11 +71,11 @@ def main():
             else:
                 attempted_org.append(delete_request['result'])
                 failed.append(attempted_org)
-            progress_bar.update(count)
-            count += 1
 
-    if not auth:
-        print 'Authentication failed 3 times, remaining users have been marked failed.'
+    if ease.status != 200:
+        print 'Re-authentication failed 3 times, there is an issue with the connection to the server.'
+        print delete_request
+        print 'Remaining orgs have been marked failed.'
         failed.extend(org_ids)
 
     if failed:

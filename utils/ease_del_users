@@ -88,12 +88,11 @@ def main():
 
             progress_bar.update(count)
 
-    if auth_fail >= 3:
-        print delete_request
-        exit()
-
     if ease.status != 200:
-        print 'Authentication failed 3 times, remaining users have been marked failed.'
+        print 'Re-authentication failed 3 times, there is an issue with the connection to the server.'
+        print delete_request
+        print 'Remaining users have been marked failed.'
+
         failed.extend(user_list)
 
     if failed:
