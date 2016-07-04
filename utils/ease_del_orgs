@@ -6,6 +6,7 @@
 import csv
 import argparse
 import keyring
+import logging
 import os
 from datetime import date, time
 
@@ -14,6 +15,9 @@ import progress
 
 
 def main():
+    success, failed = [], []
+    today = date.today()
+
     base_path = os.path.expanduser('~/.ease_utils/del_orgs')
     if not os.path.isfile(base_path):
         os.makedirs(base_path)
@@ -27,10 +31,14 @@ def main():
     parser.add_argument('--pw', default=keyring.get_password('ease_ua', 'help@apperian.com'),
                         help='Password for admin user you are using')
     parser.add_argument('--verbose', default=False, action='store_true')
-
     args = parser.parse_args()
-    success, failed = [], []
-    today = date.today()
+
+    log_level = logging.DEBUG if args.verbose else logging.CRITICAL
+    logging.basicConfig(filename='{}/{}.log'.format(base_path, today),
+                        filemode='a',
+                        format="[%(levelname)8s] %(message)s",
+                        level=log_level
+                        )
 
     with open('{}/whitelist.csv'.format(base_path), 'rb') as f:
         whitelist = []

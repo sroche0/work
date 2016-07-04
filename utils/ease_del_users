@@ -8,14 +8,18 @@ import csv
 import os
 from datetime import date
 import argparse
+import logging
 
 import progress
 from apperianapi import apperian
 
 
 def main():
+    success, failed, user_ids = [], [], []
+    today = date.today()
+
     base_path = os.path.expanduser('~/.ease_utils/del_users')
-    if not os.path.isfile(base_path):
+    if not os.path.exists(base_path):
         os.makedirs(base_path)
 
     parser = argparse.ArgumentParser(prog='Bulk User Delete',
@@ -25,17 +29,22 @@ def main():
     parser.add_argument('--org', metavar='Organization')
     parser.add_argument('--env', default='default', help='Environment to run against')
     parser.add_argument('--csv', default='user_ids.csv', help='Path to the csv with user IDs. Default is user_ids.csv')
+    parser.add_argument('--verbose', default=False, action='store_true', help='display additional logging info')
     args = parser.parse_args()
 
-    success, failed, user_ids = [], [], []
-    today = date.today()
+    log_level = logging.DEBUG if args.verbose else logging.CRITICAL
+    logging.basicConfig(filename='{}/{}.log'.format(base_path, today),
+                        filemode='a',
+                        format="[%(levelname)8s] %(message)s",
+                        level=log_level
+                        )
 
     with open(args.csv, 'rb') as f:
         reader = csv.DictReader(f)
         for row in reader:
             user_ids.append(row)
 
-    ease = apperian.Pyapi('user', 'pw', args.env)
+    ease = apperian.Pyapi('user', 'pw', args.env, args.verbose)
     count = 0
     while ease.status != 200 and count < 3:
         count += 1
@@ -44,7 +53,7 @@ def main():
         ease.auth(user, pw)
 
         if ease.status != 200:
-            if count >= 3:
+            if count < 3:
                 print 'Unable to authenticate, enter credentials again\n'
             else:
                 exit('Failed attempts exceeded, check your credentials')
