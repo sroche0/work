@@ -19,8 +19,7 @@ def main():
     today = date.today()
 
     base_path = os.path.expanduser('~/.ease_utils/del_orgs')
-    if not os.path.exists(base_path):
-        os.makedirs(base_path)
+    logging_init(base_path, today)
 
     parser = argparse.ArgumentParser(prog='Bulk Org Delete', usage='ease_del_orgs --orgs 123,456,789 --env na')
     parser.add_argument('--env', default='default', help='Environment to run against. EX: na, eu')
@@ -32,13 +31,6 @@ def main():
                         help='Password for admin user you are using')
     parser.add_argument('--verbose', default=False, action='store_true')
     args = parser.parse_args()
-
-    log_level = logging.DEBUG if args.verbose else logging.CRITICAL
-    logging.basicConfig(filename='{}/{}.log'.format(base_path, today),
-                        filemode='a',
-                        format="[%(levelname)8s] %(message)s",
-                        level=log_level
-                        )
 
     with open('{}/whitelist.csv'.format(base_path), 'rb') as f:
         whitelist = []
@@ -99,6 +91,28 @@ def main():
         with open('{}/deleted_{}.csv'.format(base_path, today), 'ab') as f:
             writer = csv.writer(f)
             writer.writerows(success)
+
+
+def logging_init(base_path, today):
+    if not os.path.exists(base_path):
+        os.makedirs(base_path)
+
+    cwd = os.getcwd()
+    os.chdir(base_path)
+
+    log_files = sorted([x for x in os.listdir('.') if '.log' in x], key=os.path.getctime)
+
+    if len(log_files) > 4:
+        os.remove(log_files[0])
+
+    logging.basicConfig(filename='{}.log'.format(today),
+                        filemode='a',
+                        format="[%(levelname)8s] %(message)s",
+                        level=logging.DEBUG
+                        )
+
+    os.chdir(cwd)
+
 
 if __name__ == '__main__':
     main()
