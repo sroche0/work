@@ -19,7 +19,7 @@ def main():
     today = date.today()
 
     base_path = os.path.expanduser('~/.ease_utils/del_orgs')
-    if not os.path.isfile(base_path):
+    if not os.path.exists(base_path):
         os.makedirs(base_path)
 
     parser = argparse.ArgumentParser(prog='Bulk Org Delete', usage='ease_del_orgs --orgs 123,456,789 --env na')
