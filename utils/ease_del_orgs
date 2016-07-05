@@ -29,7 +29,6 @@ def main():
                         help='Admin account that has the permissions to delete the target orgs')
     parser.add_argument('--pw', default=keyring.get_password('ease_ua', 'help@apperian.com'),
                         help='Password for admin user you are using')
-    parser.add_argument('--verbose', default=False, action='store_true')
     args = parser.parse_args()
 
     with open('{}/whitelist.csv'.format(base_path), 'rb') as f:
@@ -51,7 +50,7 @@ def main():
     total = len(org_ids)
     raw_input('About to delete {} orgs from EASE. Press key to continue.'.format(str(total)))
 
-    ease = apperian.Pyapi(args.user, args.pw, region=args.env, verbose=args.verbose)
+    ease = apperian.Pyapi(args.user, args.pw, region=args.env, verbose=True)
     progress_bar = progress.Bar(total)
 
     count, auth_fail = 0, 0
