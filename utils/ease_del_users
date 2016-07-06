@@ -8,23 +8,29 @@ import os
 import time
 from datetime import date
 import argparse
+import json
+import getpass
 
 import progress
 import base_class
 from apperianapi import apperian
+try:
+    import keyring
+except ImportError:
+    keyring = None
 
 
 class DeleteUsers(base_class.AdminUtilBase):
-    def __init__(self, args):
-        self.csv = args.csv
-        self.env = args.env
-        self.org = args.org
-        self.today = date.today()
-
+    def __init__(self):
         base_class.AdminUtilBase.__init__(self, os.path.expanduser('~/.ease_utils/del_users'))
 
-        self.ease = apperian.Pyapi('user', 'pw', self.env, verbose=True)
-        self.authenticate()
+        args = self.get_args()
+        self.csv = args['csv']
+        self.env = args['env']
+        self.org = args['org']
+        self.today = date.today()
+
+        self.ease = apperian.Pyapi(args['user'], args['password'], org_psk=self.org, region=self.env, verbose=True)
 
     def build_list(self):
         with open(self.csv, 'rb') as f:
@@ -51,7 +57,8 @@ class DeleteUsers(base_class.AdminUtilBase):
 
     def delete(self):
         total = len(self.psks)
-        raw_input('About to delete {} users from org {}. Press any key to continue.'.format(total, self.ease.org_psk))
+        raw_input('About to delete {} users from org {} on {}. Press any key to continue.'.format(
+            total, self.ease.org_psk, self.env.upper()))
 
         count, auth_fail = 0, 0
         progress_bar = progress.Bar(total)
@@ -81,20 +88,37 @@ class DeleteUsers(base_class.AdminUtilBase):
 
             self.failed.extend(self.psks)
 
+    def get_args(self):
+        with open('{}/config.json'.format(self.app_path)) as f:
+            loaded_args = json.load(f)
+
+        parser = argparse.ArgumentParser(prog='Bulk User Delete',
+                                         usage='python delete_users.py --org ORG_NAME --csv user_ids.csv')
+
+        parser.add_argument('--org', default=False,
+                            help='PSK of the organization to delete users from. If left blank, the org of the '
+                                 'credentials you authenticate with will be used')
+        parser.add_argument('--env', default='default', help='Environment to run against')
+        parser.add_argument('--csv', default='user_ids.csv',
+                            help='Path to the csv with user IDs. Default is user_ids.csv')
+        parser.add_argument('--user', default=loaded_args['ease_admin'], help='Ease admin password for org or ENV')
+
+        args = vars(parser.parse_args())
+
+        if not args['user']:
+            args['user'] = raw_input('Admin Username: ')
+
+        if keyring:
+            args['password'] = keyring.get_password('ease_ua', args['user'])
+        else:
+            args['password'] = getpass.getpass('Admin Password: ')
+
+        return args
+
 
 def main():
-    parser = argparse.ArgumentParser(prog='Bulk User Delete',
-                                     usage='python delete_users.py --org ORG_NAME --env ENVIRONMENT')
-    parser.add_argument('--org', default=False,
-                        help='PSK of the organization to delete users from. If left blank, the org of the credentials '
-                             'you authenticate with will be used')
-    parser.add_argument('--env', default='default', help='Environment to run against')
-    parser.add_argument('--csv', default='user_ids.csv', help='Path to the csv with user IDs. Default is user_ids.csv')
-    args = parser.parse_args()
+    delete_client = DeleteUsers()
 
-    delete_client = DeleteUsers(args)
-
-    delete_client.authenticate()
     delete_client.build_list()
     delete_client.delete()
     delete_client.log_results()
