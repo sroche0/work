@@ -75,10 +75,9 @@ class DeleteOrgs(base_class.AdminUtilBase):
 
 
 def main():
-    parser = argparse.ArgumentParser(prog='Bulk Org Delete',
-                                     usage='ease_del_orgs --orgs 123,456,789 --env na')
+    parser = argparse.ArgumentParser(prog='Bulk Org Delete', usage='ease_del_orgs --orgs 123,456,789 --env na')
     parser.add_argument('--env', default='default', help='Environment to run against. EX: na, eu')
-    parser.add_argument('--psks', default=False, required=True,
+    parser.add_argument('--psks', required=True,
                         help='Comma separated list of org IDs or path to a csv containing the target org IDs')
     parser.add_argument('--user', default='help@apperian.com',
                         help='Admin account that has the permissions to delete the target orgs')
