@@ -43,8 +43,11 @@ class AdminUtilBase:
             print 'To set default credentials, rename config.json.example to config.json and set values accordingly'
             os.makedirs(self.app_path)
             with open('{}/config.json.example'.format(self.app_path), 'wb') as f:
-                example = {'username': 'user@example.com', 'password': 'password'}
-                f.write(json.dumps(example, indent=4, separators=(',', ': ')))
+                example = {'ease_user': 'user@example.com',
+                           'role': 'ua',
+                           'jenkins_user': 'user@example.com',
+                           }
+                f.write(json.dumps(example, indent=2, separators=(',', ': ')))
 
     def log_results(self):
         if self.failed:
