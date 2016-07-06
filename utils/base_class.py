@@ -3,6 +3,7 @@ import os
 import getpass
 import csv
 import datetime
+import json
 
 
 class AdminUtilBase:
@@ -12,9 +13,10 @@ class AdminUtilBase:
         self.psks = []
         self.app_path = app_path
         self.today = datetime.date.today()
-        pass
+        self.application_init()
+        self.logging_init()
 
-    def logging_init(self, date):
+    def logging_init(self):
         cwd = os.getcwd()
 
         os.chdir(self.app_path)
@@ -23,7 +25,7 @@ class AdminUtilBase:
         if len(log_files) > 4:
             os.remove(log_files[0])
 
-        logging.basicConfig(filename='{}.log'.format(date),
+        logging.basicConfig(filename='{}.log'.format(self.today),
                             filemode='a',
                             format="[%(levelname)8s] %(message)s",
                             level=logging.DEBUG
@@ -37,7 +39,12 @@ class AdminUtilBase:
 
     def application_init(self):
         if not os.path.exists(self.app_path):
+            print 'First time run detected, creating app directory at {}'.format(self.app_path)
+            print 'To set default credentials, rename config.json.example to config.json and set values accordingly'
             os.makedirs(self.app_path)
+            with open('{}/config.json.example'.format(self.app_path), 'wb') as f:
+                example = {'username': 'user@example.com', 'password': 'password'}
+                f.write(json.dumps(example, indent=4, separators=(',', ': ')))
 
     def log_results(self):
         if self.failed:

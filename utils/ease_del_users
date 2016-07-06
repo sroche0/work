@@ -5,6 +5,7 @@
 #########################
 import csv
 import os
+import time
 from datetime import date
 import argparse
 
@@ -21,8 +22,6 @@ class DeleteUsers(base_class.AdminUtilBase):
         self.today = date.today()
 
         base_class.AdminUtilBase.__init__(self, os.path.expanduser('~/.ease_utils/del_users'))
-        self.application_init()
-        self.logging_init(self.today)
 
         self.ease = apperian.Pyapi('user', 'pw', self.env, verbose=True)
         self.authenticate()
@@ -62,6 +61,7 @@ class DeleteUsers(base_class.AdminUtilBase):
 
             if delete_request['status'] == 401:
                 auth_fail += 1
+                time.sleep(2)
                 self.ease.auth()
             else:
                 count += 1
@@ -84,10 +84,10 @@ class DeleteUsers(base_class.AdminUtilBase):
 
 def main():
     parser = argparse.ArgumentParser(prog='Bulk User Delete',
-                                     usage='python delete_users.py --org ORG_NAME --env ENVIRONMENT',
-                                     add_help='The user_ids.csv should be placed in a folder with the same name '
-                                              'as the org.  --env and --csv are optional')
-    parser.add_argument('--org', metavar='Organization')
+                                     usage='python delete_users.py --org ORG_NAME --env ENVIRONMENT')
+    parser.add_argument('--org', default=False,
+                        help='PSK of the organization to delete users from. If left blank, the org of the credentials '
+                             'you authenticate with will be used')
     parser.add_argument('--env', default='default', help='Environment to run against')
     parser.add_argument('--csv', default='user_ids.csv', help='Path to the csv with user IDs. Default is user_ids.csv')
     args = parser.parse_args()
