@@ -40,12 +40,13 @@ class AdminUtilBase:
     def application_init(self):
         if not os.path.exists(self.app_path):
             print 'First time run detected, creating app directory at {}'.format(self.app_path)
-            print 'To set default credentials, rename config.json.example to config.json and set values accordingly'
+            print 'To set default values, edit config.json in app directory'
             os.makedirs(self.app_path)
-            with open('{}/config.json.example'.format(self.app_path), 'wb') as f:
-                example = {'ease_user': 'user@example.com',
-                           'role': 'ua',
-                           'jenkins_user': 'user@example.com',
+
+        if not os.path.exists('{}/config.json'.format(self.app_path)):
+            with open('{}/config.json'.format(self.app_path), 'wb') as f:
+                example = {'ease_admin': '',
+                           'jenkins_user': '',
                            }
                 f.write(json.dumps(example, indent=2, separators=(',', ': ')))
 
@@ -63,17 +64,3 @@ class AdminUtilBase:
             with open('{}/deleted_{}.csv'.format(self.app_path, self.today), 'ab') as f:
                 writer = csv.writer(f)
                 writer.writerows(self.success)
-
-    def authenticate(self):
-        count = 0
-        while self.ease.status != 200 and count < 3:
-            count += 1
-            user = raw_input('Username > ')
-            pw = getpass.getpass('Password > ')
-            self.ease.auth(user, pw)
-
-            if self.ease.status != 200:
-                if count < 3:
-                    print 'Unable to authenticate, enter credentials again\n'
-                else:
-                    exit('Failed attempts exceeded, check your credentials')
