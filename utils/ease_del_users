@@ -1,107 +1,103 @@
-# !/usr/bin/python2.7
+#!/usr/bin/env python
 # encoding: utf-8
 # Author: Shawn Roche
-# Date: 2/18/2015
+# Date: 7/3/2016
 #########################
-import getpass
 import csv
+import os
+import time
 from datetime import date
 import argparse
-import sys
 
 import progress
+import base_class
 from apperianapi import apperian
+
+
+class DeleteUsers(base_class.AdminUtilBase):
+    def __init__(self, args):
+        self.csv = args.csv
+        self.env = args.env
+        self.org = args.org
+        self.today = date.today()
+
+        base_class.AdminUtilBase.__init__(self, os.path.expanduser('~/.ease_utils/del_users'))
+
+        self.ease = apperian.Pyapi('user', 'pw', self.env, verbose=True)
+        self.authenticate()
+
+    def build_list(self):
+        with open(self.csv, 'rb') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                self.psks.append(row)
+
+        print 'Building list of user PSKs'
+        tmp_user_list = self.ease.user.list()
+        tmp_user_list = [{'psk': x['psk'], 'user_id': x['id']} for x in tmp_user_list['result'] for y in self.psks
+                         if x['id'] == y['User ID']]
+
+        print 'Checking for duplicates'
+        psk_list = []
+        user_list = []
+        for i in tmp_user_list:
+            if i['psk'] not in psk_list:
+                psk_list.append(i['psk'])
+                user_list.append(i)
+
+        if len(tmp_user_list) - len(user_list) != 0:
+            print 'Removed {} duplicates'.format(len(tmp_user_list))
+        pass
+
+    def delete(self):
+        total = len(self.psks)
+        raw_input('About to delete {} users from org {}. Press any key to continue.'.format(total, self.ease.org_psk))
+
+        count, auth_fail = 0, 0
+        progress_bar = progress.Bar(total)
+        while self.psks and auth_fail < 3:
+            target_user = self.psks[-1]
+            delete_request = self.ease.user.delete(target_user['psk'])
+
+            if delete_request['status'] == 401:
+                auth_fail += 1
+                time.sleep(2)
+                self.ease.auth()
+            else:
+                count += 1
+                auth_fail = 0
+                target_user = self.psks.pop()
+                if delete_request['status'] == 200:
+                    self.success.append([self.org, target_user['user_id'], self.today])
+                else:
+                    self.failed.append([target_user['user_id'], delete_request['result']])
+
+                progress_bar.update(count)
+
+        if self.ease.status != 200:
+            print 'Re-authentication failed 3 times, there is an issue with the connection to the server.'
+            print delete_request
+            print 'Remaining users have been marked failed.'
+
+            self.failed.extend(self.psks)
 
 
 def main():
     parser = argparse.ArgumentParser(prog='Bulk User Delete',
-                                     usage='python delete_users.py --org ORG_NAME --env ENVIRONMENT',
-                                     add_help='The user_ids.csv should be placed in a folder with the same name '
-                                              'as the org.  --env and --csv are optional')
-    parser.add_argument('--org', metavar='Organization')
+                                     usage='python delete_users.py --org ORG_NAME --env ENVIRONMENT')
+    parser.add_argument('--org', default=False,
+                        help='PSK of the organization to delete users from. If left blank, the org of the credentials '
+                             'you authenticate with will be used')
     parser.add_argument('--env', default='default', help='Environment to run against')
     parser.add_argument('--csv', default='user_ids.csv', help='Path to the csv with user IDs. Default is user_ids.csv')
     args = parser.parse_args()
 
-    success, failed = [], []
-    today = date.today()
+    delete_client = DeleteUsers(args)
 
-    with open(args.csv, 'rb') as f:
-        user_ids = []
-        reader = csv.DictReader(f)
-        for row in reader:
-            user_ids.append(row)
-
-    count, last, auth = 0, 0, False
-    while not auth and count < 3:
-        user = raw_input('Username > ')
-        pw = getpass.getpass('Password > ')
-        ease = apperian.Pyapi(user, pw, args.env)
-        if ease.status == 200:
-            auth = True
-        count += 1
-
-    if not auth:
-        exit('Unable to authenticate, check your credentials')
-
-    print 'Building list of user PSKs'
-    tmp_user_list = ease.user.list()
-    tmp_user_list = [{'psk': x['psk'], 'user_id': x['id']} for x in tmp_user_list['result'] for y in user_ids
-                     if x['id'] == y['User ID']]
-
-    print 'Checking for duplicates'
-    psk_list = []
-    user_list = []
-    for i in tmp_user_list:
-        if i['psk'] not in psk_list:
-            psk_list.append(i['psk'])
-            user_list.append(i)
-
-    if len(tmp_user_list) - len(user_list) != 0:
-        print 'Removed {} duplicates'.format(len(tmp_user_list))
-
-    total = len(user_list)
-    raw_input('About to delete %d users from EASE. Press key to continue.' % total)
-
-    count, auth_fail = 0, 0
-    progress_bar = progress.Bar(total)
-    while user_list and auth_fail < 3:
-        delete_request = ease.user.delete(user_list[-1]['psk'])
-
-        if delete_request['status'] == 401:
-            auth_fail += 1
-            ease.auth()
-        else:
-            if delete_request['status'] == 200:
-                success.append([args.org, user_list[-1]['user_id'], today])
-                auth_fail = 0
-                user_list.pop()
-            else:
-                failed.append([user_list[-1], delete_request['result']])
-                user_list.pop()
-
-            progress_bar.update(count)
-            count += 1
-
-    if auth_fail >= 3:
-        print delete_request
-        exit()
-
-    if not auth:
-        print 'Unable to authenticate, remaining users have been marked failed.'
-        failed.extend(user_list)
-
-    if failed:
-        print '%d users failed. Check failed.csv for details\n' % len(failed)
-        with open('{}/failed.csv'.format(args.org), 'wb') as f:
-            writer = csv.writer(f)
-            writer.writerows(failed)
-
-    if success:
-        with open('deleted/deleted_list.csv', 'ab') as f:
-            writer = csv.writer(f)
-            writer.writerows(success)
-
+    delete_client.authenticate()
+    delete_client.build_list()
+    delete_client.delete()
+    delete_client.log_results()
 
 if __name__ == '__main__':
     main()

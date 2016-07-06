@@ -6,82 +6,93 @@
 import csv
 import argparse
 import keyring
-from datetime import date
+import os
+from datetime import date, time
 
+import base_class
 from apperianapi import apperian
 import progress
 
 
-def main():
-    username = 'help@apperian.com'
-    password = keyring.get_password('ease_ua', username)
+class DeleteOrgs(base_class.AdminUtilBase):
+    def __init__(self, args):
+        self.psks = args.psks
+        self.env = args.env
+        self.org = args.org
+        self.white_list = []
+        self.today = date.today()
 
-    parser = argparse.ArgumentParser(prog='Bulk Org Delete', usage='ease_del_orgs --orgs --env ENVIRONMENT')
-    parser.add_argument('--env', default='default', metavar='Environment')
-    parser.add_argument('--orgs', default=False, metavar='Orgs List', required=True)
-    parser.add_argument('--user', default='')
-    parser.add_argument('--verbose', default=False, action='store_true')
+        base_class.AdminUtilBase.__init__(self, os.path.expanduser('~/.ease_utils/del_orgs'))
+        self.ease = apperian.Pyapi(args.user, args.pw, region=args.env, verbose=True)
+        self.authenticate()
 
-    args = parser.parse_args()
-    success, failed = [], []
-    today = date.today()
-
-    with open('/Users/sroche/AeroFS/Python/work/delete_orgs/whitelist.csv', 'rb') as f:
-        whitelist = []
-        contents = csv.reader(f, delimiter=',', quotechar='"')
-        for row in contents:
-            whitelist.append(row[0])
-
-    if '.csv' in args.orgs:
-        with open(args.orgs, 'rb') as f:
-            org_ids = []
+    def build_list(self):
+        white_list = []
+        with open('{}/whitelist.csv'.format(self.app_path), 'rb') as f:
             contents = csv.reader(f, delimiter=',', quotechar='"')
             for row in contents:
-                if row[1] not in whitelist:
-                    org_ids.append(row)
-    else:
-        org_ids = [['n/a', x] for x in args.orgs.split(',')]
+                white_list.append(row[0])
 
-    total = len(org_ids)
-    raw_input('About to delete {} orgs from EASE. Press key to continue.'.format(str(total)))
-
-    ease = apperian.Pyapi(username, password, region=args.env, verbose=args.verbose)
-    auth = ease.status
-    progress_bar = progress.Bar(total)
-
-    count = 0
-    while org_ids and auth == 200:
-        delete_request = ease.org_delete(org_ids[-1][1])
-        if delete_request['status'] == 401:
-            auth = ease.auth()
+        if '.csv' in self.psks:
+            with open(self.psks, 'rb') as f:
+                contents = csv.reader(f, delimiter=',', quotechar='"')
+                for row in contents:
+                    if row[1] not in white_list:
+                        self.psks.append(row)
         else:
-            attempted_org = org_ids.pop()
-            if delete_request['status'] == 200:
-                attempted_org.append(today)
-                success.append(attempted_org)
+            self.psks = [['n/a', x] for x in self.psks.split(',')]
+
+    def delete(self):
+        total = len(self.psks)
+        raw_input('About to delete {} orgs from EASE. Press key to continue.'.format(str(total)))
+
+        count, auth_fail = 0, 0
+        progress_bar = progress.Bar(total)
+        while self.psks and auth_fail < 3:
+            target_org = self.psks[-1][1]
+            delete_request = self.ease.org_delete(target_org)
+
+            if delete_request['status'] == 401:
+                auth_fail += 1
+                time.sleep(2)
+                self.ease.auth()
             else:
-                attempted_org.append(delete_request['result'])
-                failed.append(attempted_org)
-            progress_bar.update(count)
-            count += 1
+                count += 1
+                target_org = self.psks.pop()
+                if delete_request['status'] == 200:
+                    self.success.append(target_org.append(self.today))
+                else:
+                    self.failed.append(target_org.append(delete_request['result']))
 
-    if not auth:
-        print 'Unable to authenticate, remaining orgs have been marked failed.'
-        failed.extend(org_ids)
+                progress_bar.update(count)
 
-    if failed:
-        print '{} orgs failed. Check failed.csv for details\n'.format(len(failed))
-        with open('/Users/sroche/AeroFS/Python/work/delete_orgs/failed.csv', 'wb') as f:
-            writer = csv.writer(f)
-            writer.writerows(failed)
+        if self.ease.status != 200:
+            print 'Re-authentication failed 3 times, there is an issue with the connection to the server.'
+            print delete_request
+            print 'Remaining orgs have been marked failed.'
 
-    if success:
-        with open('/Users/sroche/AeroFS/Python/work/delete_orgs/deleted/deleted_list.csv', 'ab') as f:
-            writer = csv.writer(f)
-            writer.writerows(success)
-        with open('/Users/sroche/AeroFS/Python/work/delete_orgs/deleted/{}.csv'.format(today), 'wb') as f:
-            writer = csv.writer(f)
-            writer.writerows(success)
+            self.failed.extend(self.psks)
+
+
+def main():
+    parser = argparse.ArgumentParser(prog='Bulk Org Delete',
+                                     usage='ease_del_orgs --orgs 123,456,789 --env na')
+    parser.add_argument('--env', default='default', help='Environment to run against. EX: na, eu')
+    parser.add_argument('--psks', default=False, required=True,
+                        help='Comma separated list of org IDs or path to a csv containing the target org IDs')
+    parser.add_argument('--user', default='help@apperian.com',
+                        help='Admin account that has the permissions to delete the target orgs')
+    parser.add_argument('--pw', default=keyring.get_password('ease_ua', 'help@apperian.com'),
+                        help='Password for admin user you are using')
+    args = parser.parse_args()
+
+    delete_client = DeleteOrgs(args)
+
+    delete_client.authenticate()
+    delete_client.build_list()
+    delete_client.delete()
+    delete_client.log_results()
+
 
 if __name__ == '__main__':
     main()
