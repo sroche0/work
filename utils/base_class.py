@@ -1,6 +1,6 @@
 import logging
 import os
-import getpass
+import sys
 import csv
 import datetime
 import json
@@ -64,3 +64,8 @@ class AdminUtilBase:
             with open('{}/deleted_{}.csv'.format(self.app_path, self.today), 'ab') as f:
                 writer = csv.writer(f)
                 writer.writerows(self.success)
+
+    @staticmethod
+    def status_print(message):
+        sys.stdout.write(message.ljust(30, '.'))
+        sys.stdout.flush()
