@@ -48,8 +48,6 @@ class DeleteOrgs(base_class.AdminUtilBase):
         progress_bar = progress.Bar(total)
         while self.psks and auth_fail < 3:
             target_org = self.psks[-1]
-
-            raw_input('pause')
             delete_request = self.ease.org_delete(target_org[1])
 
             if delete_request['status'] == 401:
@@ -60,9 +58,11 @@ class DeleteOrgs(base_class.AdminUtilBase):
                 count += 1
                 target_org = self.psks.pop()
                 if delete_request['status'] == 200:
-                    self.success.append(target_org.append(self.today))
+                    target_org.append(self.today)
+                    self.success.append(target_org)
                 else:
-                    self.failed.append(target_org.append(delete_request['result']))
+                    target_org.append(delete_request['result'])
+                    self.failed.append(target_org)
 
                 progress_bar.update(count)
 
