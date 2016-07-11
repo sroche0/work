@@ -18,7 +18,6 @@ class DeleteOrgs(base_class.AdminUtilBase):
     def __init__(self, args):
         self.psks = args.psks
         self.env = args.env
-        self.org = args.org
         self.white_list = []
         self.today = date.today()
 
@@ -87,7 +86,6 @@ def main():
 
     delete_client = DeleteOrgs(args)
 
-    delete_client.authenticate()
     delete_client.build_list()
     delete_client.delete()
     delete_client.log_results()
