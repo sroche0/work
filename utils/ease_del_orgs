@@ -66,6 +66,8 @@ class DeleteOrgs(base_class.AdminUtilBase):
 
                 progress_bar.update(count)
 
+        print
+
         if self.ease.status != 200:
             print 'Re-authentication failed 3 times, there is an issue with the connection to the server.'
             print delete_request
