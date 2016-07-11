@@ -23,7 +23,6 @@ class DeleteOrgs(base_class.AdminUtilBase):
 
         base_class.AdminUtilBase.__init__(self, os.path.expanduser('~/.ease_utils/del_orgs'))
         self.ease = apperian.Pyapi(args.user, args.pw, region=args.env, verbose=True)
-        self.authenticate()
 
     def build_list(self):
         white_list = []
